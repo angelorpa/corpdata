@@ -19,6 +19,42 @@ CREATE TABLE EMPLOYEE
 )
 ;
 
+LABEL ON COLUMN EMPLOYEE 
+( 
+    EMPNO       TEXT IS 'Employee number',
+    FIRSTNME    TEXT IS 'First name of employee', 
+    MIDINIT     TEXT IS 'Middle initial of employee', 
+    LASTNAME    TEXT IS 'Family name of employee',
+    WORKDEPT    TEXT IS 'Employee Department',
+    PHONENO     TEXT IS 'Employee telephone number',
+    HIREDATE    TEXT IS 'Date of hire',
+    JOB         TEXT IS 'Job held by the employee',
+    EDLEVEL     TEXT IS 'Years of formal education',
+    SEX         TEXT IS 'Sex of the employee (M or F)',
+    BIRTHDATE   TEXT IS 'Date of birth',
+    SALARY      TEXT IS 'Yearly salary in dollars',
+    BONUS       TEXT IS 'Yearly bonus in dollars',
+    COMM        TEXT IS 'Yearly commission in dollars'
+) ; 
+
+LABEL ON COLUMN EMPLOYEE
+( 
+    EMPNO        IS 'Employee number',
+    FIRSTNME     IS 'First name of employee', 
+    MIDINIT      IS 'Middle initial of employee', 
+    LASTNAME     IS 'Family name of employee',
+    WORKDEPT     IS 'Employee Department',
+    PHONENO      IS 'Employee telephone number',
+    HIREDATE     IS 'Date of hire',
+    JOB          IS 'Job held by the employee',
+    EDLEVEL      IS 'Years of formal education',
+    SEX          IS 'Sex of the employee (M or F)',
+    BIRTHDATE    IS 'Date of birth',
+    SALARY       IS 'Yearly salary in dollars',
+    BONUS        IS 'Yearly bonus in dollars',
+    COMM         IS 'Yearly commission in dollars' 
+) ; 
+
 ALTER TABLE EMPLOYEE 
   ADD FOREIGN KEY RED (WORKDEPT) 
   REFERENCES DEPARTMENT 
