@@ -10,6 +10,26 @@ CREATE TABLE DEPARTMENT
 )
 ;
 
+LABEL ON COLUMN DEPARTMENT 
+( 
+    DEPTNO      TEXT IS 'Department number or ID' , 
+    DEPTNAME    TEXT IS 'Describe the general activities of the department' ,
+    MGRNO       TEXT IS 'Employee number (EMPNO) of the department manager' , 
+    ADMRDEPT    TEXT IS 'Department to which this department reports' , 
+    LOCATION    TEXT IS 'Location of the department' 
+) ; 
+
+
+LABEL ON COLUMN DEPARTMENT
+( 
+    DEPTNO      IS 'Department          number' , 
+    DEPTNAME    IS 'Department          name'   ,
+    MGRNO       IS 'Manager'                    , 
+    ADMRDEPT    IS 'Reports             to '    , 
+    LOCATION    IS 'Deapartmen          Location' 
+) ; 
+
+
 ALTER TABLE DEPARTMENT
   ADD FOREIGN KEY ROD (ADMRDEPT)
   REFERENCES DEPARTMENT
