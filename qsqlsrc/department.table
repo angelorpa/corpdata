@@ -1,0 +1,38 @@
+CREATE TABLE DEPARTMENT
+(
+    DEPTNO    CHAR(3)           NOT NULL, --Department number or ID.
+    DEPTNAME  VARCHAR(36)       NOT NULL, --A name describing the general activities of the department.
+    MGRNO     CHAR(6)                   , --Employee number (EMPNO) of the department manager.
+    ADMRDEPT  CHAR(3)           NOT NULL, --The department (DEPTNO) to which this department reports; the department at the highest level reports to itself.
+    LOCATION  CHAR(16)                  , --Location of the department.
+    
+    PRIMARY KEY (DEPTNO)
+)
+;
+
+ALTER TABLE DEPARTMENT
+  ADD FOREIGN KEY ROD (ADMRDEPT)
+  REFERENCES DEPARTMENT
+  ON DELETE CASCADE
+;
+          
+ALTER TABLE DEPARTMENT
+  ADD FOREIGN KEY RDE (MGRNO)
+  REFERENCES EMPLOYEE
+  ON DELETE SET NULL
+;          
+          
+CREATE UNIQUE INDEX XDEPT1
+   ON DEPARTMENT (DEPTNO)
+;
+
+CREATE INDEX XDEPT2
+   ON DEPARTMENT (MGRNO)
+;
+
+CREATE INDEX XDEPT3
+ON DEPARTMENT (ADMRDEPT)
+;
+
+CREATE ALIAS DEPT FOR DEPARTMENT
+;
